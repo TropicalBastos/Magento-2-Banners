@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright © 2015 PlazaThemes.com. All rights reserved.
+ * Copyright © 2018 Ian Bastos.com. All rights reserved.
 
- * @author PlazaThemes Team <contact@plazathemes.com>
+ * @author Ian Bastos Team <contact@Ian Bastos.com>
  */
 
 namespace Onepcs\HeaderImages\Block;
