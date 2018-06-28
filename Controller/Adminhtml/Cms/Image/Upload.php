@@ -1,6 +1,6 @@
 <?php
 
-namespace Greenvision\HeaderImages\Controller\Adminhtml\Cms\Image;
+namespace Onepcs\HeaderImages\Controller\Adminhtml\Cms\Image;
 
 use Magento\Framework\Controller\ResultFactory;
 

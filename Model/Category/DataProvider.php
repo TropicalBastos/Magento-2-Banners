@@ -1,5 +1,5 @@
 <?php
-namespace Greenvision\HeaderImages\Model\Category;
+namespace Onepcs\HeaderImages\Model\Category;
 
 class DataProvider extends \Magento\Catalog\Model\Category\DataProvider
 {

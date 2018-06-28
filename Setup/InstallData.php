@@ -1,6 +1,6 @@
 <?php
 
-namespace Greenvision\HeaderImages\Setup;
+namespace Onepcs\HeaderImages\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
