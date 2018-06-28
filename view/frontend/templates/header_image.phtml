@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Check if the page is a category or cms page
+ * and if so render their respective header image
+ */
+
+?>
+
+<?php if($block->isCategoryPage() || $block->isCmsPage()): ?>
+    <?php if($block->hasHeaderImage()): ?>
+        <img src="<?= $block->getHeaderImageUrl() ?>" class="header-image-full" />
+    <?php endif; ?>
+<?endif; ?>
