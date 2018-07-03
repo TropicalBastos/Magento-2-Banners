@@ -31,11 +31,9 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
         }
 
         $data = $this->dataPersistor->get('cms_page');
-
+        $page = $this->collection->getNewEmptyItem();
 
         if (!empty($data)) {
-            $page = $this->collection->getNewEmptyItem();
-
             $page->setData($data);
             $this->loadedData[$page->getId()] = $page->getData();
             $this->dataPersistor->clear('cms_page');
