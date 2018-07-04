@@ -2,13 +2,23 @@
 
 /**
  * Check if the page is a category or cms page
- * and if so render their respective header image
+ * and if so render their respective header image(s)
  */
 
 ?>
 
 <?php if($block->isCategoryPage() || $block->isCmsPage()): ?>
-    <?php if($block->hasHeaderImage()): ?>
-        <img src="<?= $block->getHeaderImageUrl() ?>" class="header-image-full" />
+    <?php if($block->hasBackgroundHeaderImage()): ?>
+        <div class="container-fluid" style="background: url(<?= $block->getBackgroundHeaderImageUrl() ?>)">
+            <?php if($block->hasHeaderImage()): ?>
+                <div class="container">
+                    <img src="<?= $block->getHeaderImageUrl() ?>" class="header-image-full" />
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php else: ?>
+        <?php if($block->hasHeaderImage()): ?>
+            <img src="<?= $block->getHeaderImageUrl() ?>" class="header-image-full" />
+        <?php endif; ?>
     <?php endif; ?>
 <?endif; ?>

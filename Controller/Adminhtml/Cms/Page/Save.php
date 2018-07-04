@@ -15,7 +15,7 @@ class Save extends \Magento\Cms\Controller\Adminhtml\Page\Save
      * @see _isAllowed()
      */
     const ADMIN_RESOURCE = 'Magento_Cms::save';
-
+    const PAGE_HEADER_BACKGROUND_IMAGE = 'page_header_background_image';
     const PAGE_HEADER_IMAGE = 'page_header_image';
 
     /**
@@ -62,6 +62,10 @@ class Save extends \Magento\Cms\Controller\Adminhtml\Page\Save
             // Add custom image field to data
             if(isset($data[self::PAGE_HEADER_IMAGE]) && is_array($data[self::PAGE_HEADER_IMAGE])){
                 $data[self::PAGE_HEADER_IMAGE]=$data[self::PAGE_HEADER_IMAGE][0]['name'];
+            }
+
+            if(isset($data[self::PAGE_HEADER_BACKGROUND_IMAGE]) && is_array($data[self::PAGE_HEADER_BACKGROUND_IMAGE])){
+                $data[self::PAGE_HEADER_BACKGROUND_IMAGE]=$data[self::PAGE_HEADER_BACKGROUND_IMAGE][0]['name'];
             }
 
 

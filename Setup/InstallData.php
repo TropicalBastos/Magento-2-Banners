@@ -54,7 +54,17 @@ class InstallData implements InstallDataInterface
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
                 'group' => 'General Information',
             ]
-        );
+        )->addAttribute(
+            \Magento\Catalog\Model\Category::ENTITY, 'background_header_image', [
+                'type' => 'varchar',
+                'label' => 'Background Header Image',
+                'input' => 'image',
+                'backend' => 'Magento\Catalog\Model\Category\Attribute\Backend\Image',
+                'required' => false,
+                'sort_order' => 10,
+                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+                'group' => 'General Information',
+        ]);
     }
 
 }

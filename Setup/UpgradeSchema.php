@@ -35,6 +35,23 @@ class UpgradeSchema implements UpgradeSchemaInterface
 
             $setup->endSetup();
         }
+
+        /**
+         * v1.0.4 adds in the background header images
+         */
+        if(version_compare($context->getVersion(), '1.0.4', '<')){
+            $setup->startSetup();
+            $connection = $setup->getConnection();
+            $connection->addColumn($setup->getTable('cms_page'), 'page_header_background_image',
+                [
+                    'type' => \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    'length' => 255,
+                    'nullable' => true,
+                    'comment' => 'Page Header Background Image'
+            ]);
+
+            $setup->endSetup();
+        }
     }
 
 }

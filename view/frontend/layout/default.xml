@@ -6,6 +6,10 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/bootstrap.min.css" />
+        <css src="css/header_images.css" />
+    </head>
     <body>
         <referenceContainer name="page.wrapper">
             <block class="GlobalGust\HeaderImages\Block\HeaderImage"

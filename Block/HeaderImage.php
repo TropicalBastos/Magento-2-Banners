@@ -16,6 +16,8 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
     const PAGE_HEADER_IMAGE = 'page_header_image';
     const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/';
     const CMS_MEDIA_PREFIX = '/pub/media/cms/headerimages/';
+    const CATEGORY_BACKGROUND_HEADER_IMAGE = 'background_header_image';
+    const PAGE_BACKGROUND_HEADER_IMAGE = 'page_header_background_image';
 
     protected $_template = 'GlobalGust_HeaderImages::header_image.phtml';
     protected $_request;
@@ -112,6 +114,31 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
         return $headerImage;
     }
 
+    /** Get the url of the background header image
+     * @return null|string
+     */
+    public function getBackgroundHeaderImageUrl()
+    {
+        $background = null;
+
+        switch($this->_pageType){
+            case self::CATEGORY_PAGE:
+                $headerImage = self::CATEGORY_MEDIA_PREFIX
+                    . $this->getCategory()->getData(self::CATEGORY_BACKGROUND_HEADER_IMAGE);
+                break;
+
+            case self::CMS_PAGE:
+                $headerImage = self::CMS_MEDIA_PREFIX .
+                    $this->getPage()->getData(self::PAGE_BACKGROUND_HEADER_IMAGE);
+                break;
+
+            default:
+                break;
+        }
+
+        return $background;
+    }
+
     /** Check if block has header image
      * @return bool
      */
@@ -130,6 +157,26 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
         }
 
         return $hasHeaderImage;
+    }
+
+    /** Check if block has background header image
+     * @return bool
+     */
+    public function hasBackgroundHeaderImage()
+    {
+        $hasBackground = false;
+
+        if($this->isCategoryPage()){
+            if($this->getCategory()->getData(self::CATEGORY_BACKGROUND_HEADER_IMAGE))
+                $hasHeaderImage = true;
+        }
+
+        if($this->isCmsPage()){
+            if($this->getPage()->getData(self::PAGE_BACKGROUND_HEADER_IMAGE))
+                $hasHeaderImage = true;
+        }
+
+        return $hasBackground;
     }
 
 }
