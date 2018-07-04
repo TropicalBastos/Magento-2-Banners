@@ -7,6 +7,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Onepcs_HeaderImages',
+    'GlobalGust_HeaderImages',
     __DIR__
 );

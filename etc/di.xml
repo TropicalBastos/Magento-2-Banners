@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
 
-    <type name="Onepcs\HeaderImages\Controller\Adminhtml\Category\Image\Upload">
+    <type name="GlobalGust\HeaderImages\Controller\Adminhtml\Category\Image\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
         </arguments>
@@ -19,7 +19,7 @@
         </arguments>
     </virtualType>
 
-    <type name="Onepcs\HeaderImages\Controller\Adminhtml\Cms\Image\Upload">
+    <type name="GlobalGust\HeaderImages\Controller\Adminhtml\Cms\Image\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Magento\Catalog\CmsImageUpload</argument>
         </arguments>
@@ -37,7 +37,7 @@
         </arguments>
     </virtualType>
 
-    <preference for="Magento\Catalog\Model\Category\DataProvider" type="Onepcs\HeaderImages\Model\Category\DataProvider" />
-    <preference for="Magento\Cms\Controller\Adminhtml\Page\Save" type="Onepcs\HeaderImages\Controller\Adminhtml\Cms\Page\Save" />
-    <preference for="Magento\Cms\Model\Page\DataProvider" type="Onepcs\HeaderImages\Model\Cms\Page\DataProvider" />
+    <preference for="Magento\Catalog\Model\Category\DataProvider" type="GlobalGust\HeaderImages\Model\Category\DataProvider" />
+    <preference for="Magento\Cms\Controller\Adminhtml\Page\Save" type="GlobalGust\HeaderImages\Controller\Adminhtml\Cms\Page\Save" />
+    <preference for="Magento\Cms\Model\Page\DataProvider" type="GlobalGust\HeaderImages\Model\Cms\Page\DataProvider" />
 </config>

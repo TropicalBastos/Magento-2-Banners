@@ -1,6 +1,6 @@
 <?php
 
-namespace Onepcs\HeaderImages\Setup;
+namespace GlobalGust\HeaderImages\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;

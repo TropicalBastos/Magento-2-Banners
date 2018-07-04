@@ -5,7 +5,7 @@
  * @author Ian Bastos Team <contact@Ian Bastos.com>
  */
 
-namespace Onepcs\HeaderImages\Block;
+namespace GlobalGust\HeaderImages\Block;
 
 class HeaderImage extends \Magento\Framework\View\Element\Template {
 
@@ -17,7 +17,7 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
     const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/';
     const CMS_MEDIA_PREFIX = '/pub/media/cms/headerimages/';
 
-    protected $_template = 'Onepcs_HeaderImages::header_image.phtml';
+    protected $_template = 'GlobalGust_HeaderImages::header_image.phtml';
     protected $_request;
     protected $_pageType;
     protected $_registry;

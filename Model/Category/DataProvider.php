@@ -1,5 +1,5 @@
 <?php
-namespace Onepcs\HeaderImages\Model\Category;
+namespace GlobalGust\HeaderImages\Model\Category;
 
 class DataProvider extends \Magento\Catalog\Model\Category\DataProvider
 {

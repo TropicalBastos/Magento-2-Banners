@@ -1,6 +1,6 @@
 <?php
 
-namespace Onepcs\HeaderImages\Controller\Adminhtml\Cms\Image;
+namespace GlobalGust\HeaderImages\Controller\Adminhtml\Cms\Image;
 
 use Magento\Framework\Controller\ResultFactory;
 

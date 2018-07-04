@@ -1,6 +1,6 @@
 <?php
 
-namespace Onepcs\HeaderImages\Setup;
+namespace GlobalGust\HeaderImages\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Onepcs\HeaderImages\Controller\Adminhtml\Cms\Page;
+namespace GlobalGust\HeaderImages\Controller\Adminhtml\Cms\Page;
 
 use Magento\Backend\App\Action;
 use Magento\Cms\Model\Page;

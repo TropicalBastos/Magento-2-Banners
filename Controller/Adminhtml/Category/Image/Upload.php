@@ -1,5 +1,5 @@
 <?php
-namespace Onepcs\HeaderImages\Controller\Adminhtml\Category\Image;
+namespace GlobalGust\HeaderImages\Controller\Adminhtml\Category\Image;
 
 use Magento\Framework\Controller\ResultFactory;
 
@@ -79,7 +79,7 @@ class Upload extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Onepcs_HeaderImages::category');
+        return $this->_authorization->isAllowed('GlobalGust_HeaderImages::category');
     }
 
     /**
