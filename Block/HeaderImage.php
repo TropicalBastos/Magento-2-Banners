@@ -98,12 +98,12 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
 
         switch($this->_pageType){
             case self::CATEGORY_PAGE:
-                $headerImage = self::CATEGORY_MEDIA_PREFIX
+                $headerImage = $this->getBaseUrl() . self::CATEGORY_MEDIA_PREFIX
                     . $this->getCategory()->getData(self::HEADER_IMAGE);
                 break;
 
             case self::CMS_PAGE:
-                $headerImage = self::CMS_MEDIA_PREFIX .
+                $headerImage = $this->getBaseUrl() . self::CMS_MEDIA_PREFIX .
                     $this->getPage()->getData(self::PAGE_HEADER_IMAGE);
                 break;
 
@@ -123,12 +123,12 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
 
         switch($this->_pageType){
             case self::CATEGORY_PAGE:
-                $headerImage = self::CATEGORY_MEDIA_PREFIX
+                $headerImage = $this->getBaseUrl() . self::CATEGORY_MEDIA_PREFIX
                     . $this->getCategory()->getData(self::CATEGORY_BACKGROUND_HEADER_IMAGE);
                 break;
 
             case self::CMS_PAGE:
-                $headerImage = self::CMS_MEDIA_PREFIX .
+                $headerImage = $this->getBaseUrl() . self::CMS_MEDIA_PREFIX .
                     $this->getPage()->getData(self::PAGE_BACKGROUND_HEADER_IMAGE);
                 break;
 

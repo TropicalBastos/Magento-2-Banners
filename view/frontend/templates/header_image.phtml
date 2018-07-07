@@ -9,7 +9,7 @@
 
 <?php if($block->isCategoryPage() || $block->isCmsPage()): ?>
     <?php if($block->hasBackgroundHeaderImage()): ?>
-        <div class="container-fluid" style="background: url(<?= $block->getBackgroundHeaderImageUrl() ?>)">
+        <div class="container-fluid header-image-container" style="background: url(<?= $block->getBackgroundHeaderImageUrl() ?>)">
             <?php if($block->hasHeaderImage()): ?>
                 <div class="container">
                     <img src="<?= $block->getHeaderImageUrl() ?>" class="header-image-full" />
