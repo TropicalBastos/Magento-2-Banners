@@ -89,8 +89,9 @@ class Upload extends \Magento\Backend\App\Action
      */
     public function execute()
     {
+        $fileName = $this->getRequest()->getParam('param_name');
         try {
-            $result = $this->imageUploader->saveFileToTmpDir('header_image');
+            $result = $this->imageUploader->saveFileToTmpDir($fileName);
             $result['cookie'] = [
                 'name' => $this->_getSession()->getName(),
                 'value' => $this->_getSession()->getSessionId(),
