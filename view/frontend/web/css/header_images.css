@@ -1,10 +1,17 @@
 .header-image-container{
-    padding: 40px 0;
+    padding: 5% 0;
     width: 100%;
     height: auto;
+    margin: 20px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .header-image-full{
     width: 100%;
     height: auto;
+}
+
+.header-image-full.margined{
+    margin: 20px 0;
 }
