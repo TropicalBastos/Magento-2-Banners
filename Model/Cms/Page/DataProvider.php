@@ -47,12 +47,14 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
         $currentStore = $storeManager->getStore();
         $mediaUrl=$currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 
-        if(!empty($this->loadedData[$page->getId()]['page_header_image'])){
-            $this->processFile('page_header_image', $page, $mediaUrl);
-        }
-
-        if(!empty($this->loadedData[$page->getId()]['page_header_background_image'])){
-            $this->processFile('page_header_background_image', $page, $mediaUrl);
+        if($this->loadedData){
+            if(!empty($this->loadedData[$page->getId()]['page_header_image'])){
+                $this->processFile('page_header_image', $page, $mediaUrl);
+            }
+    
+            if(!empty($this->loadedData[$page->getId()]['page_header_background_image'])){
+                $this->processFile('page_header_background_image', $page, $mediaUrl);
+            }
         }
 
         return $this->loadedData;
