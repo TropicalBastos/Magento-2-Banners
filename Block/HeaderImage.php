@@ -11,13 +11,17 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
 
     const CATEGORY_PAGE = 'catalog_category_view';
     const CMS_PAGE = 'cms_page_view';
+    const PRODUCT_PAGE = 'catalog_product_view';
     const CURRENT_CATEGORY = 'current_category';
-    const HEADER_IMAGE= 'header_image';
+    const HEADER_IMAGE = 'header_image';
     const PAGE_HEADER_IMAGE = 'page_header_image';
-    const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/';
+    const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/headerimages/';
     const CMS_MEDIA_PREFIX = '/pub/media/cms/headerimages/';
+    const PRODUCT_MEDIA_PREFIX = '/pub/media/catalog/product/headerimages/';
     const CATEGORY_BACKGROUND_HEADER_IMAGE = 'background_header_image';
     const PAGE_BACKGROUND_HEADER_IMAGE = 'page_header_background_image';
+    const PRODUCT_HEADER_IMAGE = 'product_header_image';
+    const PRODUCT_HEADER_BACKGROUND_IMAGE = 'product_header_back_image';
 
     protected $_template = 'GlobalGust_HeaderImages::header_image.phtml';
     protected $_request;
@@ -65,6 +69,19 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
         return false;
     }
 
+    /** Checks whether page is product page
+     * @return bool
+     */
+    public function isProductPage()
+    {
+        if ($this->getFullActionName() == self::PRODUCT_PAGE) {
+            $this->_pageType = self::PRODUCT_PAGE;
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * @return string
      */
@@ -89,6 +106,14 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
         return $this->_page;
     }
 
+    /**
+     * @return Product
+     */
+    public function getProduct()
+    {
+        return $this->_registry->registry('product');
+    }
+
     /** Get the url of the header image
      * @return null|string
      */
@@ -105,6 +130,11 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
             case self::CMS_PAGE:
                 $headerImage = $this->getBaseUrl() . self::CMS_MEDIA_PREFIX .
                     $this->getPage()->getData(self::PAGE_HEADER_IMAGE);
+                break;
+
+            case self::PRODUCT_PAGE:
+                $headerImage = $this->getBaseUrl() . self::PRODUCT_MEDIA_PREFIX .
+                    $this->getProduct()->getData(self::PRODUCT_HEADER_IMAGE);
                 break;
 
             default:
@@ -132,6 +162,11 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
                     $this->getPage()->getData(self::PAGE_BACKGROUND_HEADER_IMAGE);
                 break;
 
+            case self::PRODUCT_PAGE:
+                $background = $this->getBaseUrl() . self::PRODUCT_MEDIA_PREFIX .
+                    $this->getProduct()->getData(self::PRODUCT_HEADER_BACKGROUND_IMAGE);
+                break;
+
             default:
                 break;
         }
@@ -156,6 +191,11 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
                 $hasHeaderImage = true;
         }
 
+        if($this->isProductPage()){
+            if($this->getProduct()->getData(self::PRODUCT_HEADER_IMAGE))
+                $hasHeaderImage = true;
+        }
+
         return $hasHeaderImage;
     }
 
@@ -173,6 +213,11 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
 
         if($this->isCmsPage()){
             if($this->getPage()->getData(self::PAGE_BACKGROUND_HEADER_IMAGE))
+                $hasBackground = true;
+        }
+
+        if($this->isProductPage()){
+            if($this->getProduct()->getData(self::PRODUCT_HEADER_BACKGROUND_IMAGE))
                 $hasBackground = true;
         }
 

@@ -7,7 +7,7 @@
 
 ?>
 
-<?php if($block->isCategoryPage() || $block->isCmsPage()): ?>
+<?php if($block->isCategoryPage() || $block->isCmsPage() || $block->isProductPage()): ?>
     <?php if($block->hasBackgroundHeaderImage()): ?>
         <div class="container-fluid header-image-container" style="background-image: url(<?= $block->getBackgroundHeaderImageUrl() ?>)">
             <?php if($block->hasHeaderImage()): ?>
