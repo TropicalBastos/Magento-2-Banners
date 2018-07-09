@@ -2,7 +2,7 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <fieldset name="content">
-        <field name="header_image">
+        <field name="product_header_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
@@ -15,12 +15,12 @@
                     <item name="required" xsi:type="boolean">false</item>
                     <item name="sortOrder" xsi:type="number">40</item>
                     <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="headerimages/category_image/upload"/>
+                        <item name="url" xsi:type="url" path="headerimages/product_image/upload"/>
                     </item>
                 </item>
             </argument>
         </field>
-        <field name="background_header_image">
+        <field name="product_header_back_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
@@ -33,7 +33,7 @@
                     <item name="required" xsi:type="boolean">false</item>
                     <item name="sortOrder" xsi:type="number">41</item>
                     <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="headerimages/category_image/upload"/>
+                        <item name="url" xsi:type="url" path="headerimages/product_image/upload"/>
                     </item>
                 </item>
             </argument>
