@@ -100,4 +100,3 @@ class Save extends \Magento\Cms\Controller\Adminhtml\Page\Save
         return $resultRedirect->setPath('*/*/');
     }
 }
-?>

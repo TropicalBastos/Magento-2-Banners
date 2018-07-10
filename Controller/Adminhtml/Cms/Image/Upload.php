@@ -50,4 +50,3 @@ class Upload extends \Magento\Backend\App\Action
         return $this->resultFactory->create(ResultFactory::TYPE_JSON)->setData($result);
     }
 }
-?>
