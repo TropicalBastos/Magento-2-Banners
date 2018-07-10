@@ -2,7 +2,7 @@
     "name": "globalgust/headerimages",
     "description": "Header banner images for Magento 2",
     "require": {
-        "php": "~7.0.13|~7.1.0",
+        "php": "~5.5.0|~5.6.0|~7.0.0|7.0.2|7.0.4|~7.0.6|~7.1.0",
         "magento/module-theme": "100.2.*",
         "magento/module-cms": "102.0.*",
         "magento/module-catalog": "102.0.*",
