@@ -8,8 +8,8 @@
     </type>
     <virtualType name="Magento\Catalog\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
         <arguments>
-            <argument name="baseTmpPath" xsi:type="string">catalog/category/headerimages</argument>
-            <argument name="basePath" xsi:type="string">catalog/category/headerimages</argument>
+            <argument name="baseTmpPath" xsi:type="string">catalog/category</argument>
+            <argument name="basePath" xsi:type="string">catalog/category</argument>
             <argument name="allowedExtensions" xsi:type="array">
                 <item name="jpg" xsi:type="string">jpg</item>
                 <item name="jpeg" xsi:type="string">jpeg</item>

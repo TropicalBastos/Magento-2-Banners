@@ -15,7 +15,7 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
     const CURRENT_CATEGORY = 'current_category';
     const HEADER_IMAGE = 'header_image';
     const PAGE_HEADER_IMAGE = 'page_header_image';
-    const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/headerimages/';
+    const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/';
     const CMS_MEDIA_PREFIX = '/pub/media/cms/headerimages/';
     const PRODUCT_MEDIA_PREFIX = '/pub/media/catalog/product/headerimages/';
     const CATEGORY_BACKGROUND_HEADER_IMAGE = 'background_header_image';
