@@ -39,16 +39,17 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Product\Save
         /** Product may have been saved at this point */
         $productId = $this->getRequest()->getParam('id');
         $product = $this->productRepository->getById($productId);
+        $request = $this->getRequest()->getParam('product');
         if($product){
-            if(isset($this->getRequest()->getParam('product')[self::PRODUCT_HEADER_IMAGE])){
-                if($headerImg = $this->getRequest()->getParam('product')[self::PRODUCT_HEADER_IMAGE]){
+            if(isset($request[self::PRODUCT_HEADER_IMAGE])){
+                if($headerImg = $request[self::PRODUCT_HEADER_IMAGE]){
                     $product->setData(self::PRODUCT_HEADER_IMAGE, $headerImg[0]['name']);
                 }
             }else{
                 $product->setData(self::PRODUCT_HEADER_IMAGE, null);
             }
-            if(isset($this->getRequest()->getParam('product')[self::PRODUCT_HEADER_BACKGROUND_IMAGE])){
-                if($headerBackgroundImg = $this->getRequest()->getParam('product')[self::PRODUCT_HEADER_BACKGROUND_IMAGE]){
+            if(isset($request[self::PRODUCT_HEADER_BACKGROUND_IMAGE])){
+                if($headerBackgroundImg = $request[self::PRODUCT_HEADER_BACKGROUND_IMAGE]){
                     $product->setData(self::PRODUCT_HEADER_BACKGROUND_IMAGE, $headerBackgroundImg[0]['name']);
                 }
             }else{
