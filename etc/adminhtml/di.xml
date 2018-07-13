@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+     <arguments>
+         <argument name="modifiers" xsi:type="array">
+             <item name="modifier_name" xsi:type="array">
+                 <item name="class" xsi:type="string">GlobalGust\HeaderImages\Ui\DataProvider\Product\Form\Modifier\ProductDataModifier</item>
+                 <item name="sortOrder" xsi:type="number">9999</item>
+             </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+</config>

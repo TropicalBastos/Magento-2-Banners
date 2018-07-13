@@ -1,23 +1,30 @@
 <?php
 
-namespace GlobalGust\HeaderImages\Ui\DataProvider\Product;
+namespace GlobalGust\HeaderImages\Ui\DataProvider\Product\Form\Modifier;
 
-use Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider as DataProvider;
+use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
+use Magento\Ui\DataProvider\Modifier\PoolInterface;
 use GlobalGust\HeaderImages\Helper\File as FileManager;
 
-class ProductDataProvider extends DataProvider
+class ProductDataModifier extends AbstractModifier
 {
 
+    /** Literal path to media storage  */
     const PRODUCT_HEADER_MEDIA_URL = 'catalog/product/headerimages/';
 
-     /**
-     * Get data
-     *
-     * @return array
+    /**
+     * {@inheritdoc}
      */
-    public function getData()
+    public function modifyMeta(array $meta)
     {
-        $data = parent::getData();
+        return $meta;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function modifyData(array $data)
+    {
         $mainData = array_values($data)[0]['product'];
         $productId = array_keys($data)[0];
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
@@ -65,4 +72,5 @@ class ProductDataProvider extends DataProvider
         $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
         return $mediaUrl;
     }
+
 }
