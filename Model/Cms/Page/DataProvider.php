@@ -68,6 +68,12 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
     {
         $imageName = $this->loadedData[$page->getId()][$fileName];
         unset($this->loadedData[$page->getId()][$fileName]);
+        
+        /** After saving the $imageName variable is loaded as an array */
+        if(is_array($imageName)){
+            $imageName = $imageName[0]['name'];
+        }
+
         $imageUrl = $mediaUrl."cms/headerimages/".$imageName;
         $imageBytes = FileManager::getFileSize($imageUrl);
         $this->loadedData[$page->getId()][$fileName][0]['name'] = $imageName;
