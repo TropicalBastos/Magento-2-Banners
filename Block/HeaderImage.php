@@ -15,6 +15,7 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
     const CURRENT_CATEGORY = 'current_category';
     const HEADER_IMAGE = 'header_image';
     const PAGE_HEADER_IMAGE = 'page_header_image';
+    const NO_ROUTE_PAGE = 'cms_noroute_index';
     const CATEGORY_MEDIA_PREFIX = '/pub/media/catalog/category/';
     const CMS_MEDIA_PREFIX = '/pub/media/cms/headerimages/';
     const PRODUCT_MEDIA_PREFIX = '/pub/media/catalog/product/headerimages/';
@@ -61,7 +62,8 @@ class HeaderImage extends \Magento\Framework\View\Element\Template {
      */
     public function isCmsPage()
     {
-        if ($this->getFullActionName() == self::CMS_PAGE) {
+        if ($this->getFullActionName() == self::CMS_PAGE 
+        || $this->getFullActionName() == self::NO_ROUTE_PAGE) {
             $this->_pageType = self::CMS_PAGE;
             return true;
         }
