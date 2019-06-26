@@ -17,10 +17,10 @@ This is particularly useful if you want to upload custom images that showcase th
 There are two ways you can add header images: you can either add one image (which scales it to the full width of the screen) or add a background image and then add an inner contained image (which scales the background image to full screen while keeping the inner image contained within the site's container).
 
 Features:
-Add a banner image to any category page to bring it to life
-Add a banner image to any product page to promote similar products etc
-Add a banner image to any CMS page to further customise its look
-Add unique banners to every single page-based entity in your store, giving your store a bespoke feel
-The ability to add a background image for a particular banner image is included
-Style the banners with CSS as they are exposed via simple css classes making styling very easy
-Freedom to upload any wide-ratio image as aspect ratio is adjusted 
+- Add a banner image to any category page to bring it to life
+- Add a banner image to any product page to promote similar products etc
+- Add a banner image to any CMS page to further customise its look
+- Add unique banners to every single page-based entity in your store, giving your store a bespoke feel
+- The ability to add a background image for a particular banner image is included
+- Style the banners with CSS as they are exposed via simple css classes making styling very easy
+- Freedom to upload any wide-ratio image as aspect ratio is adjusted 
